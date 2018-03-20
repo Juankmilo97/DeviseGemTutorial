@@ -157,8 +157,8 @@ config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, a
  
 ```rails generate controller Pages```
 
-   Crearemos además un controlador Usuario con los campos que añade Devise.
+   Crearemos además un modelo Usuario utilizando la gema de **Devise** Devise.
 
 ```rails generate devise user```
 
- 17.
+ 17. Añadimos al archivo __*/routes.db*__
