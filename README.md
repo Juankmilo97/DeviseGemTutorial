@@ -10,7 +10,7 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
 
 ```type rvm | head -1 ```
   
-   Resultado esperado:
+   **Resultado esperado:**
  
 ```rvm is a function```
 
@@ -18,7 +18,7 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
  
 ```rvm -v```
 
-   Resultado esperado:
+   **Resultado esperado:**
   
 ```rvm 1.29.2 (latest) by Michal Papis, Piotr Kuczynski, Wayne E. Seguin [https://rvm.io/]```
 
@@ -36,46 +36,46 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
  
 ```ruby -v```
 
-   Resultado esperado:
+   **Resultado esperado:**
     
 ```ruby 2.3.3p222 (2016-11-21 revision 56859) [x86_64-linux]```
 
- 6. Procedemos a instalar la gema de Rails y a actualizar la versión de Node.js cuando vayamos a usar los archivos de Front-End:
+ 6. Procedemos a instalar la gema de *Rails* y a actualizar la versión de *Node.js* cuando vayamos a usar los archivos de Front-End:
  
 ```gem install rails```
 
 ```nvm install v8.9.4```
 
- 7. Generamos una llave SSH que nos identifique de forma única con la aplicación y con la plataforma a la que posteriormente vamos a desplegar la app (Heroku):
+ 7. Generamos una *llave SSH* que nos identifique de forma única con la aplicación y con la plataforma a la que posteriormente vamos a desplegar la app (**Heroku**):
  
 ```ssh-keygen -C example@dominio.com -t rsa```
 
    Realizamos los pasos que por defecto va solicitando la terminal. Se recomienda asignar un Passphrase distinto a vacío dado que si alguien obtiene esa llave puede autenticarse sobre nuestra aplicación y realizar cambios indeseados.
    
- 8. Añadimos la nueva llave SSH al agente de autenticación por medio de los siguientes comandos:
+ 8. Añadimos la nueva *llave SSH al agente de autenticación* por medio de los siguientes comandos:
     Iniciamos el agente de autenticación con:
     
 ```eval `ssh-agent` ```
 
-   Añadimos la llave SSH al agente de autenticación:
+   Añadimos la *llave SSH al agente de autenticación*:
    
 ```ssh-add ~/.ssh/id_rsa```
 
- 9. Verificamos que tengamos instalado el Heroku-CLI para poder desplegarlo posteriormente:
+ 9. Verificamos que tengamos instalado el *Heroku-CLI* para poder desplegarlo posteriormente:
  
 ```heroku version```
 
-   Resultado esperado:
+   **Resultado esperado:**
    
 ```heroku-cli/6.14.4-d011db2 (linux-x64) node-v8.4.0```
 
- 10. Añadimos nuestra llave SSH de autenticación a Heroku con:
+ 10. Añadimos nuestra **llave SSH de autenticación a Heroku** con:
  
 ```heroku keys:add```
 
-   Va a solicitar que se inicie sesión con la cuenta de Heroku, seguir los pasos solicitados en la terminal.
+   Va a solicitar que se inicie sesión con la *cuenta de Heroku*, seguir los pasos solicitados en la terminal.
    
- 11. Creamos una aplicación en Rails, y probamos que esté funcionando correctamente:
+ 11. Creamos una aplicación en *Rails*, y probamos que esté funcionando correctamente:
  
 ```rails new testapp```
 
