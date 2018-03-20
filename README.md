@@ -86,3 +86,34 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
    La URL para ver la aplicación corriendo es:
    
 ```http://nameworkspace-username.c9users.io/```
+ 12. Modificamos el *GemFile* para que en el despliegue de la App tanto en *Heroku* como en *Cloud9* su funcionamiento sea el esperado:
+```
+# GemFile
+
+## Use sqlite3 as the database for Active Record
+## gem 'sqlite3'
+gem 'pg'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
+
+...
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+end
+
+group :production do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pg'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'selenium-webdriver'
+end
+
+...
+```
