@@ -1,15 +1,19 @@
 # DeviseGemTutorial
 
-Este repo explica como configurar una app con Ruby on Rails usango la gema de Devise y la autenticación que ésta soporta.
+Este repo explica como configurar una app con **Ruby on Rails** usango la gema de Devise y la autenticación que ésta soporta.
 
 ## Paso-A-Paso
 
-Sigue las instrucciones a continuación para configurar una App con Rails usando la gema de Devise en Cloud9 (AWS), en una máquina con S.O. Linux y desplegarla en Heroku, usando las notificaciones por correo electrónico.
+Sigue las instrucciones a continuación para configurar una **App con Rails** usando la gema de **Devise** en *Cloud9 (AWS)*, en una máquina con **S.O. Linux** y desplegarla en **Heroku**, usando las notificaciones por correo electrónico.
 
- 1. Vamos a utilizar el Ruby Version Manager como la herramienta más facil para actualizar y manejar el lenguaje Ruby. Ejecuta la siguiente linea de código:
-```type rvm | head -1 ```     
-    Resultado esperado:
+ 1. Vamos a utilizar el *Ruby Version Manager* como la herramienta más facil para actualizar y manejar el *lenguaje Ruby*. Ejecuta la siguiente linea de código:
+
+```type rvm | head -1 ```
+  
+  Resultado esperado:
+ 
 ```rvm is a function```
+
  2. Verifiquemos la versión con el commando:
 ```rvm -v```    
     Resultado esperado:
