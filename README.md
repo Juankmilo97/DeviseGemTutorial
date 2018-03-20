@@ -2,7 +2,7 @@
 
 Este repo explica como configurar una app con Ruby on Rails usango la gema de Devise y la autenticación que ésta soporta.
 
-##Paso-A-Paso
+## Paso-A-Paso
 
 Sigue las instrucciones a continuación para configurar una App con Rails usando la gema de Devise en Cloud9 (AWS), en una máquina con S.O. Linux y desplegarla en Heroku, usando las notificaciones por correo electrónico.
 
