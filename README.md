@@ -140,7 +140,7 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, authentication: "plain", enable_starttls_auto: true, user_name: "example@dominio.com", password: "password" }
 ```
 
- 15. Configurar el archivo de Ruby para completar las notificaciones con *Devise Mailer* en `testapp/config/initializers/devise.rb`:
+ 15. Configurar el archivo de Ruby para completar el email desde el que se van a enviar las notificaciones con *Devise Mailer* en `testapp/config/initializers/devise.rb`:
  
 ```
   # Descomentar config.secret_key
@@ -152,3 +152,13 @@ config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, a
   
   ...
 ```
+
+ 16. Crearemos un controlador de ejemplo para este tutorial para que visualicemos el funcionamiento de ésta autenticación
+ 
+```rails generate controller Pages```
+
+   Crearemos además un controlador Usuario con los campos que añade Devise.
+
+```rails generate devise user```
+
+ 17.
