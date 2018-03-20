@@ -161,9 +161,37 @@ config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, a
 
 ```rails generate devise user```
 
- 17. Añadimos al archivo __*/routes.db*__ la ruta que ejecutará la pagina de incio sobre el controlador *Pages*:
+ 17. Añadimos al archivo __*testapp/config/locales/routes.db*__ la ruta que ejecutará la pagina de incio sobre el controlador *Pages*:
  
  ```
- root 'pages#home'
+ # routes.rb File
+ 
+ Rails.application.routes.draw do
+  devise_for :users
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'pages#home'
+end
  ```
+
+ 18. Ejecutamos el comando para realizar las migraciones necesarias a la base de Datos, y ejecutamos de nuevo el *Bundle* para garantizar que todas las gemas estén instaladas.
+ 
+```rails -g db:migrate```
+```bundle install --without production```
+
+ 19. Realizamos commit sobre el heroku para posteriormente cargarlo a y desplegarlo en Heroku:
+ 
+```
+git add -A
+git commit -m 'lo que sea'
+```
+   A pesar de que ya lo conectamos, no se ha creado aún la app en *Heroku*
+   
+ 20. Finalmente, ejecutamos los comandos que crean la app en *Heroku*, que suben la app de *CLoud9* a *Heroku*, ejecutamos las migraciones sobre PostgreSQL en Heroku, y ejecutamos la app.
+ 
+```
+heroku create
+git push heroku master
+heroku run rails db:migrate
+heroku open
+```
  
