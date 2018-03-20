@@ -139,3 +139,16 @@ config.action_mailer.default_url_options = { host: 'http://nameworkspace-usernam
 config.action_mailer.delivery_method = :smtp 
 config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, authentication: "plain", enable_starttls_auto: true, user_name: "example@dominio.com", password: "password" }
 ```
+
+ 15. Configurar el archivo de Ruby para completar las notificaciones con *Devise Mailer* en `testapp/config/initializers/devise.rb`:
+ 
+```
+  # Descomentar config.secret_key
+  config.secret_key = '9e7339d059c094f86bb5bf6a06aad9b7701382d6f48c4f0ddaa7781702d1434d05f7d40881b11cf1eecce6174867f3b40e009b9f7295de41ceffcc596012755b'
+  
+  ...
+  
+  config.mailer_sender = 'example@dominio.com'
+  
+  ...
+```
