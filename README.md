@@ -86,6 +86,7 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
    La URL para ver la aplicación corriendo es:
    
 ```http://nameworkspace-username.c9users.io/```
+
  12. Modificamos el *GemFile* para que en el despliegue de la App tanto en *Heroku* como en *Cloud9* su funcionamiento sea el esperado:
 ```
 # GemFile
@@ -94,6 +95,10 @@ Sigue las instrucciones a continuación para configurar una **App con Rails** us
 ## gem 'sqlite3'
 gem 'pg'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
+
+...
+
+gem 'bcrypt', '~> 3.1.7' # Descomentar ésta linea de código.
 
 ...
 
@@ -116,4 +121,21 @@ group :production do
 end
 
 ...
+```
+
+ 13. Actualizar la gema de Bundle, y correr el siguiente comando para instalar las gemas requeridas. Además instalar la gema de Devise para generar los modelos y controladores que se van a usar en las migraciones de las bases de datos para :
+ 
+```gem install bundler```
+```bundle install```
+
+   Instalación de la Gema de Devise
+   
+```rails generate devise:install```
+
+ 14. Configurar los archivos de Ruby para desarrollo y producción (`testapp/config/environments/development.rb` y `*/production.rb`) de la aplicación para las notificaciones por medio del correo electrónico:
+ 
+```
+config.action_mailer.default_url_options = { host: 'http://nameworkspace-username.c9users.io/', port: 8080 }
+config.action_mailer.delivery_method = :smtp 
+config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, authentication: "plain", enable_starttls_auto: true, user_name: "example@dominio.com", password: "password" }
 ```
