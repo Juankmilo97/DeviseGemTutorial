@@ -161,4 +161,9 @@ config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, a
 
 ```rails generate devise user```
 
- 17. Añadimos al archivo __*/routes.db*__
+ 17. Añadimos al archivo __*/routes.db*__ la ruta que ejecutará la pagina de incio sobre el controlador *Pages*:
+ 
+ ```
+ root 'pages#home'
+ ```
+ 
