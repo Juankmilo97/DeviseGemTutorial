@@ -161,6 +161,33 @@ config.action_mailer.smtp_settings = { address: "smtp.dominio.com", port: 587, a
 
 ```rails generate devise user```
 
+#### **NOTA**
+
+ Añadimos al archivo *testapp/app/views/layouts/application.html.erb* para que se hagan una idea de como se puede manipular esta implementación desde la parte de Front-End que realicen en *ReactJS* o en *AngularJS*
+
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>
+```
+
  17. Añadimos al archivo __*testapp/config/locales/routes.db*__ la ruta que ejecutará la pagina de incio sobre el controlador *Pages*:
  
  ```
